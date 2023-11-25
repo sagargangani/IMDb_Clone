@@ -19,7 +19,7 @@
   <body>
     <!-- Register Section -->
     <section id="login" class="container mt-5">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center main-container">
         <div class="col-md-6">
           <img
             src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
@@ -29,7 +29,7 @@
           <div class="card mt-5">
             <h2 class="ml-3 mt-4">Create account</h2>
             <div class="card-body">
-              <form id="loginForm">
+              <form id="registerForm">
                 <div class="form-group">
                   <label for="username" class="font-weight-bold"
                     >Your name</label
@@ -39,6 +39,8 @@
                     class="form-control"
                     id="name"
                     placeholder="First and last name"
+                    pattern="[A-Za-z\s]{3,}"
+                    title="Enter a valid name (at least 3 characters of alphabets)"
                     required
                   />
                 </div>
@@ -61,6 +63,8 @@
                     class="form-control"
                     id="password"
                     placeholder="Enter password"
+                    pattern=".{8,}"
+                    title="Enter a valid password (at least 8 characters)"
                     required
                   />
                 </div>
@@ -77,24 +81,22 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password" class="font-weight-bold"
-                    >Re-Enter password</label
+                  <label for="confirmPassword" class="font-weight-bold"
+                    >Confirm password</label
                   >
                   <input
                     type="password"
                     class="form-control"
-                    id="reenterpassword"
+                    id="confirmpassword"
                     placeholder="Enter password"
+                    name="confirmPassword"
                     required
                   />
                 </div>
-
-                <!-- <a for="forgot-password" class="forgotpassword"
-                  >Forgot Password?</a
-                > -->
                 <button
-                  type="submit"
+                  type="button"
                   class="btn w-100 mt-3 submit-button btn-warning border-warning mb-3"
+                  onclick="registerUser()"
                 >
                   Create your IMDb account
                 </button>
