@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-image">
         <img src="${imagePath}" alt="${movie.title}"/>
       </div>
-      <div style="padding: 10px;" class="card-content">
+      <div style="padding: 15px;" class="card-content">
         <h2 style=" font-weight: bold;">${movie.title}</h2>
         <p><strong>Release Date:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ${movie.vote_average}</p>
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-image">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
-      <div style="padding: 10px;" class="card-content">
+      <div style="padding: 15px;" class="card-content">
         <h2 style="font-weight: bold;">${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
