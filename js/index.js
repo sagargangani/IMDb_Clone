@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
       : "https://via.placeholder.com/150";
     const movieInfo = `
       <div class="card-image">
-        <img src="${imagePath}" alt="${movie.title}" />
+        <img src="${imagePath}" alt="${movie.title}"/>
       </div>
-      <div class="card-content">
-        <h2>${movie.title}</h2>
+      <div style="padding: 10px;" class="card-content">
+        <h2 style=" font-weight: bold;">${movie.title}</h2>
         <p><strong>Release Date:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ${movie.vote_average}</p>
-        <p>${movie.overview}</p>
+        <p>${movie.overview.slice(0, 150)} ...</p>
       </div>
     `;
 
@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-image">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
-      <div class="card-content">
-        <h2>${tv.name}</h2>
+      <div style="padding: 10px;" class="card-content">
+        <h2 style="font-weight: bold;">${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
-        <p>${tv.overview}</p>
+        <p>${tv.overview.slice(0, 150)} ...</p>
       </div>
     `;
 
@@ -84,3 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return tvCard;
   }
 });
+
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-theme");
+}

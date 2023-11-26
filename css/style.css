@@ -75,10 +75,16 @@ body {
   
   .movie-container {
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     padding: 0 20px;
     flex-wrap: wrap;
     gap: 20px;
+  }
+
+  .dark-theme{
+    color: white;
+    background-color: black;
   }
 
   
@@ -155,7 +161,7 @@ body {
   .tv-container {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding:0 20px;
     flex-wrap: wrap;
     gap: 20px;
   }
@@ -225,4 +231,22 @@ body {
   .site-footer .social-links a i {
     font-size: 20px;
   }
-  
+
+  .dark-theme{
+    color: white;
+    background-color: black;
+    .site-header{
+      color: black;
+      background-color: white;
+    }
+    .main-navigation ul li a {
+      color:black;
+  }
+  .site-footer{
+    color: black;
+      background-color: white;
+  }
+  .site-footer .social-links a {
+    color: black  ;
+  }
+}
