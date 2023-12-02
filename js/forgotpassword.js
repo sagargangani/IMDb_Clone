@@ -1,3 +1,24 @@
+// const request = indexedDB.open("userDB", 1);
+// let db;
+
+// request.onupgradeneeded = function (event) {
+//   db = event.target.result;
+//   const objectStore = db.createObjectStore("users", {
+//     keyPath: "email",
+//     autoIncrement: true,
+//   });
+//   objectStore.createIndex("users", "users", { unique: true });
+// };
+
+// request.onsuccess = function (event) {
+//   db = event.target.result;
+//   console.log("database log", db);
+// };
+
+// request.onerror = function (event) {
+//   console.error("Database error: " + event.target.errorCode);
+// };
+
 let captchaText = document.getElementById("captcha");
 var ctx = captchaText.getContext("2d");
 ctx.font = "30px Roboto";
@@ -136,91 +157,62 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-function resetPassword(email) {
-  // const email = document.getElementById("email").value;
-  // const newPassword = document.getElementById("newPassword").value;
-  // console.log("new password", newPassword);
-  // const transaction = db.transaction(["users"], "readwrite");
-  // const objectStore = transaction.objectStore("users");
-  // const index = objectStore.index("email");
-  // const request = index.put({ email, password: newPassword }, email);
+// function resetPassword(email) {
+//   const newPassword = document.getElementById("newPassword").value;
+//   const transaction = db.transaction(["users"], "readwrite");
+//   const objectStore = transaction.objectStore("users");
 
-  // request.onsuccess = function (event) {
-  //   showAlert("Password reset successfully.", "success");
-  //   alert("password reset successfully");
-  // };
+//   const request = objectStore.get(email);
 
-  // request.onerror = function (event) {
-  //   showAlert("Error resetting password.", "danger");
-  // };
+//   request.onsuccess = function (event) {
+//     const user = event.target.result;
 
-  const newPassword = document.getElementById("newPassword").value;
-  const transaction = db.transaction(["users"], "readwrite");
-  const objectStore = transaction.objectStore("users");
-  const request = objectStore.put({ email, password: newPassword }, email);
+//     if (user) {
+//       user.password = newPassword;
+//       const updateRequest = objectStore.put(user);
 
-  request.onsuccess = function (event) {
-    showAlert("Password reset successfully.", "success");
-    console.log("Password reset successfully");
-  };
+//       updateRequest.onsuccess = function () {
+//         console.log("Password updated successfully");
+//       };
 
-  request.onerror = function (event) {
-    showAlert("Error resetting password.", "danger");
-    console.error("Error resetting password:", event.target.errorCode);
-  };
-}
+//       updateRequest.onerror = function () {
+//         console.error("Error updating password:", updateRequest.error);
+//       };
+//     } else {
+//       console.error("User not found");
+//     }
+//   };
+
+//   request.onerror = function () {
+//     console.error("Error getting user:", request.error);
+//   };
+
+// }
 
 function continuebutton() {
-  console.log("continue button");
-
   const email = document.getElementById("email").value;
-  emailExists(email, function (emailExists) {
-    if (emailExists) {
-      showAlert("Email found in the database. Resetting password...", "info");
-      const request = indexedDB.open("userDB", 1);
-      let db;
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-      request.onupgradeneeded = function (event) {
-        console.log("event data", event);
-        db = event.target.result;
-        const objectStore = db.createObjectStore("users", { keyPath: "email" });
-        objectStore.createIndex("email", "email", { unique: false });
-      };
+  const user = existingUsers.find((u) => u.email === email);
 
-      request.onsuccess = function (event) {
-        db = event.target.result;
-        console.log("database log", db);
-      };
+  if (!user) {
+    showAlert(
+      "Email not found. Please check your email or register.",
+      "danger"
+    );
+    return;
+  }
 
-      request.onerror = function (event) {
-        console.error("Database error: " + event.target.errorCode);
-      };
-      resetPassword(email);
-    } else {
-      showAlert("Email not found in the database.", "danger");
-    }
-  });
-  // resetPassword();
-  // emailExists(email.value, function (emailExists) {
-  //   if (emailExists) {
-  //     const transaction = db.transaction(["users"], "readwrite");
-  //     const objectStore = transaction.objectStore("users");
-  //     const request = objectStore.put({ email }, email);
-
-  //     request.onsuccess = function (event) {
-  //       resetPassword();
-  //     };
-
-  //     request.onerror = function (event) {
-  //       showAlert("Email not found in the database.", "danger");
-  //     };
-  //   } else {
-  //     showAlert("Email not found in the database.", "danger");
-  //   }
-  // });
+  const newPassword = document.getElementById("newPassword").value;
+  if (newPassword) {
+    user.password = newPassword;
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+    showAlert("Password reset successful!", "success");
+  } else {
+    showAlert("Error while updating the password.", "danger");
+  }
 }
 function check_captcha() {
-  console.log(userText.value);
   const email = document.getElementById("email").value;
   const newPassword = document.getElementById("newPassword").value;
 

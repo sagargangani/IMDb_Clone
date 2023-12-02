@@ -1,32 +1,32 @@
-var db;
-document.addEventListener("DOMContentLoaded", function () {
-  // Open or create a database
-  var request = indexedDB.open("userDB", 1);
+// var db;
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Open or create a database
+//   var request = indexedDB.open("userDB", 1);
 
-  request.onerror = function (event) {
-    console.log("Database error: " + event.target.errorCode);
-  };
+//   request.onerror = function (event) {
+//     console.log("Database error: " + event.target.errorCode);
+//   };
 
-  request.onsuccess = function (event) {
-    db = event.target.result;
-    console.log("Database opened successfully");
-  };
+//   request.onsuccess = function (event) {
+//     db = event.target.result;
+//     console.log("Database opened successfully");
+//   };
 
-  request.onupgradeneeded = function (event) {
-    var db = event.target.result;
+//   request.onupgradeneeded = function (event) {
+//     var db = event.target.result;
 
-    // Create an object store with auto-incrementing key
-    var objectStore = db.createObjectStore("users", {
-      keyPath: "id",
-      autoIncrement: true,
-    });
+//     // Create an object store with auto-incrementing key
+//     var objectStore = db.createObjectStore("users", {
+//       keyPath: "id",
+//       autoIncrement: true,
+//     });
 
-    // Create an index to search users by email
-    objectStore.createIndex("email", "email", { unique: true });
+//     // Create an index to search users by email
+//     objectStore.createIndex("email", "email", { unique: true });
 
-    console.log("Database setup complete");
-  };
-});
+//     console.log("Database setup complete");
+//   };
+// });
 
 function isValidEmail(email) {
   // Simple email validation regex
@@ -99,36 +99,53 @@ function registerUser() {
     return;
   }
 
-  var transaction = db.transaction(["users"], "readwrite");
-  var objectStore = transaction.objectStore("users");
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-  // Check if the email already exists
-  var emailIndex = objectStore.index("email");
-  var request = emailIndex.get(email);
+  const isExistingUser = existingUsers.some((user) => user.email === email);
 
-  request.onsuccess = function () {
-    if (request.result) {
-      showAlert("Email already registered!", "info");
-      // Clear the form
-      document.getElementById("registerForm").reset();
-    } else {
-      // Add the user to the object store
-      var user = { name: name, email: email, password: password };
-      var addUserRequest = objectStore.add(user);
+  if (isExistingUser) {
+    showAlert("Email already exists. Choose a different email.", "danger");
+    return;
+  }
 
-      addUserRequest.onsuccess = function () {
-        showAlert("Registration successful!", "success");
-        // Clear the form
-        document.getElementById("registerForm").reset();
-      };
+  const newUser = { email, password };
+  existingUsers.push(newUser);
 
-      addUserRequest.onerror = function () {
-        showAlert("Error adding user to the database", "danger");
-      };
-    }
-  };
+  // Store the updated user list in localStorage
+  localStorage.setItem("users", JSON.stringify(existingUsers));
 
-  transaction.onerror = function (event) {
-    console.log("Transaction error: " + event.target.errorCode);
-  };
+  showAlert("Registration successful!", "success");
+
+  // var transaction = db.transaction(["users"], "readwrite");
+  // var objectStore = transaction.objectStore("users");
+
+  // // Check if the email already exists
+  // var emailIndex = objectStore.index("email");
+  // var request = emailIndex.get(email);
+
+  // request.onsuccess = function () {
+  //   if (request.result) {
+  //     showAlert("Email already registered!", "info");
+  //     // Clear the form
+  //     document.getElementById("registerForm").reset();
+  //   } else {
+  //     // Add the user to the object store
+  //     var user = { name: name, email: email, password: password };
+  //     var addUserRequest = objectStore.add(user);
+
+  //     addUserRequest.onsuccess = function () {
+  //       showAlert("Registration successful!", "success");
+  //       // Clear the form
+  //       document.getElementById("registerForm").reset();
+  //     };
+
+  //     addUserRequest.onerror = function () {
+  //       showAlert("Error adding user to the database", "danger");
+  //     };
+  //   }
+  // };
+
+  // transaction.onerror = function (event) {
+  //   console.log("Transaction error: " + event.target.errorCode);
+  // };
 }

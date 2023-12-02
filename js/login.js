@@ -2,23 +2,23 @@ function navigateToPage() {
   location.href = "../html/register.html";
 }
 
-const request = indexedDB.open("userDB", 1);
-let db;
+// const request = indexedDB.open("userDB", 1);
+// let db;
 
-request.onupgradeneeded = function (event) {
-  console.log("event data", event);
-  db = event.target.result;
-  const objectStore = db.createObjectStore("users", { keyPath: "email" });
-  objectStore.createIndex("password", "password", { unique: false });
-};
+// request.onupgradeneeded = function (event) {
+//   console.log("event data", event);
+//   db = event.target.result;
+//   const objectStore = db.createObjectStore("users", { keyPath: "email" });
+//   objectStore.createIndex("password", "password", { unique: false });
+// };
 
-request.onsuccess = function (event) {
-  db = event.target.result;
-};
+// request.onsuccess = function (event) {
+//   db = event.target.result;
+// };
 
-request.onerror = function (event) {
-  console.error("Database error: " + event.target.errorCode);
-};
+// request.onerror = function (event) {
+//   console.error("Database error: " + event.target.errorCode);
+// };
 
 function isValidEmail(email) {
   // Simple email validation regex
@@ -65,26 +65,45 @@ function login() {
     return;
   }
 
-  const transaction = db.transaction(["users"], "readonly");
-  const objectStore = transaction.objectStore("users");
-  const index = objectStore.index("email");
-  // const request = objectStore.get(email);
-  const request = index.get(email);
-  request.onsuccess = function (event) {
-    const user = event.target.result;
-    if (user) {
-      if (user.password === password && user.email === email) {
-        showAlert("Login successful!", "success");
-        document.getElementById("loginForm").reset();
-      } else {
-        showAlert("Invalid email or password.", "danger");
-      }
-    } else {
-      showAlert("Invalid email or password.", "danger");
-    }
-  };
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-  request.onerror = function (event) {
-    showAlert("Error accessing database.", "danger");
-  };
+  const user = existingUsers.find((u) => u.email === email);
+
+  if (!user) {
+    showAlert(
+      "Email not found. Please check your email or register.",
+      "danger"
+    );
+    return;
+  }
+
+  if (user.password === password) {
+    showAlert("Login successful!", "success");
+    // You can redirect to a dashboard or perform other actions after login.
+  } else {
+    showAlert("Incorrect password. Please try again.", "danger");
+  }
+
+  // const transaction = db.transaction(["users"], "readonly");
+  // const objectStore = transaction.objectStore("users");
+  // const index = objectStore.index("email");
+  // // const request = objectStore.get(email);
+  // const request = index.get(email);
+  // request.onsuccess = function (event) {
+  //   const user = event.target.result;
+  //   if (user) {
+  //     if (user.password === password && user.email === email) {
+  //       showAlert("Login successful!", "success");
+  //       document.getElementById("loginForm").reset();
+  //     } else {
+  //       showAlert("Invalid email or password.", "danger");
+  //     }
+  //   } else {
+  //     showAlert("Invalid email or password.", "danger");
+  //   }
+  // };
+
+  // request.onerror = function (event) {
+  //   showAlert("Error accessing database.", "danger");
+  // };
 }
