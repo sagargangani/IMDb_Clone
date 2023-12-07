@@ -115,6 +115,7 @@ function registerUser() {
   localStorage.setItem("users", JSON.stringify(existingUsers));
 
   showAlert("Registration successful!", "success");
+  document.getElementById("registerForm").reset();
 
   // var transaction = db.transaction(["users"], "readwrite");
   // var objectStore = transaction.objectStore("users");

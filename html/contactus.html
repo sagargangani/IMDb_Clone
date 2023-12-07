@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDb Contact us</title>
+    <link rel="stylesheet" href="../css/contactus.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main id="contact-page">
+      <!-- Banner image -->
+      <div class="banner-image">
+        <!-- Overlay to give faded effect -->
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Contact us section starts here -->
+      <section class="container">
+        <h1 class="sub-heading">Reach out to us</h1>
+        <p>
+          If you need help with your booking, get in touch today by filling in
+          your details below.
+        </p>
+
+        <!-- Two column layout  -->
+        <div class="row">
+          <!-- first column for contact us form -->
+          <div class="column-8">
+            <div class="form-container">
+              <form>
+                <div class="form-field-wrapper">
+                  <label class="form-label" for="name">Name</label>
+                  <input
+                    class="form-field"
+                    placeholder="Enter Name"
+                    type="text"
+                    name="first-name"
+                    id="name"
+                  />
+                </div>
+                <div class="form-field-wrapper">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input
+                    class="form-field"
+                    placeholder="Enter Email"
+                    type="text"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div class="form-field-wrapper">
+                  <label class="form-label" for="phnumber">Phone Number</label>
+                  <input
+                    class="form-field"
+                    placeholder="Enter phone number"
+                    type="text"
+                    name="phnumber"
+                    id="number"
+                    maxlength="10"
+                  />
+                </div>
+
+                <div class="form-field-wrapper">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea
+                    class="form-field"
+                    placeholder="Enter message"
+                    name="message"
+                    id="message"
+                  ></textarea>
+                </div>
+
+                <div class="form-field-wrapper">
+                  <button class="form-btn" type="button" onclick="contactus()">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- second column for contact us options -->
+          <div class="column-4">
+            <div class="row">
+              <div class="module icon-card">
+                <div class="icon-card-icon">
+                  <i class="fas fa-map-marker-alt" style="color: #ffc107"></i>
+                </div>
+                <div class="icon-card-title-caption">
+                  <h6 class="icon-card-title h6">Visit Us</h6>
+                  <div class="icon-card-caption body">
+                    <p>
+                      <a
+                        class="address-icon"
+                        title="Address"
+                        href="https://www.google.com/maps/place/Lambton+College+In+Toronto/@43.7732535,-79.3386891,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4d3bca1a3f78f:0x815365ed6c3b957e!8m2!3d43.7732497!4d-79.3361142!16s%2Fg%2F11s0fcxlnd?entry=ttu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Trail Finders<br />265 Yorkland Blvd <br />#400, North
+                        York,<br />
+                        ON M2J 1S5
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="module icon-card">
+                <div class="icon-card-icon">
+                  <i class="fas fa-mobile" style="color: #ffc107"></i>
+                </div>
+                <div class="icon-card-title-caption">
+                  <h6 class="icon-card-title h6">Call Us</h6>
+                  <div class="icon-card-caption body">
+                    <p>
+                      <a class="call-icon" title="call" href="tel:+11234567890">
+                        +1 (123) 456 7890
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="module icon-card">
+                <div class="icon-card-icon">
+                  <i class="fas fa-envelope" style="color: #ffc107"></i>
+                </div>
+                <div class="icon-card-title-caption">
+                  <h6 class="icon-card-title h6">Email Us</h6>
+                  <div class="icon-card-caption body">
+                    <p>
+                      <a
+                        class="call-icon"
+                        title="call"
+                        href="mailto:contact@trailfinders.com"
+                      >
+                        contact@trailfinders.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="../js/contactus.js"></script>
+  </body>
+</html>
