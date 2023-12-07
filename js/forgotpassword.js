@@ -208,6 +208,7 @@ function continuebutton() {
     user.password = newPassword;
     localStorage.setItem("users", JSON.stringify(existingUsers));
     showAlert("Password reset successful!", "success");
+    document.getElementById("loginForm").reset();
   } else {
     showAlert("Error while updating the password.", "danger");
   }
