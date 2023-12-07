@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <title>IMDb Register</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Register Section -->
+    <section id="login" class="container mt-5">
+      <div class="row justify-content-center main-container">
+        <div class="col-md-6">
+          <img
+            src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+            class="center"
+            alt="User Image"
+          />
+          <div class="card mt-5">
+            <h2 class="ml-3 mt-4">Create account</h2>
+            <div class="card-body">
+              <form id="registerForm">
+                <div class="form-group">
+                  <label for="username" class="font-weight-bold"
+                    >Your name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="First and last name"
+                    pattern="[A-Za-z\s]{3,}"
+                    title="Enter a valid name (at least 3 characters of alphabets)"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="username" class="font-weight-bold">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password" class="font-weight-bold"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    pattern=".{8,}"
+                    title="Enter a valid password (at least 8 characters)"
+                    required
+                  />
+                </div>
+
+                <div class="icon-container">
+                  <img
+                    src="../images/information.png"
+                    alt="information"
+                    class="infoicon"
+                  />
+                  <div class="a-alert-content">
+                    Passwords must be at least 8 characters.
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmPassword" class="font-weight-bold"
+                    >Confirm password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmpassword"
+                    placeholder="Enter password"
+                    name="confirmPassword"
+                    required
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn w-100 mt-3 submit-button btn-warning border-warning mb-3"
+                  onclick="registerUser()"
+                >
+                  Create your IMDb account
+                </button>
+              </form>
+              <div class="a-divider-inner"></div>
+              <div class="container signin">
+                <p>
+                  Already have an account? <a href="./signin.html">Sign in</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

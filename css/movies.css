@@ -1,0 +1,14 @@
+.movie_header{
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px;
+}
+.movie-card{
+    margin: 15px;
+}
+
+#next_button{
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+}
