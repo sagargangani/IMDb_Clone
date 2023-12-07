@@ -120,5 +120,8 @@ async function populateCarousel() {
     `;
   });
 }
-
-populateCarousel();
+var element =  document.getElementById('carouselExampleIndicators');
+if (typeof(element) != 'undefined' && element != null)
+{
+  populateCarousel();
+}
