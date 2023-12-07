@@ -79,6 +79,7 @@ function login() {
 
   if (user.password === password) {
     showAlert("Login successful!", "success");
+    document.getElementById("registerForm").reset();
     // You can redirect to a dashboard or perform other actions after login.
   } else {
     showAlert("Incorrect password. Please try again.", "danger");
