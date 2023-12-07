@@ -271,7 +271,7 @@ body {
   height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1040px) {
 .container{
   flex-direction: column;
   /* justify-content: center; */
@@ -286,6 +286,26 @@ body {
 
 .search-bar{
   margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  width: 150px;
+  margin-right: 10px;
+  border-radius: 10px;
+
+}
+
+.tv-card .card-content {
+  padding: 25px;
+}
+
+.movie-card .card-content{
+  font-size: 200;
+}
+
+.tv-card .card-content{
+  font-size: 200;
 }
 
 .movie-container{
