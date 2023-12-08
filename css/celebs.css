@@ -1,6 +1,7 @@
 .main-wrapper {
     max-width: 1300px;
     margin: 25px auto;
+    padding: 20px;
 }
 
 .section-header {
@@ -140,6 +141,9 @@
 .plot {
     font-size: 14px;
     color: #424242;
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
 }
 
 .remove-btn {
@@ -160,6 +164,29 @@
     .image-wrapper img {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media (max-width: 600px){
+    .lister-item-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lister-item-content {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .lister-item-image img {
+        max-width: 200px;
+    }
+    .remove-btn {
+        bottom: 100px;
+    }
+
+    .section-header {
+        text-align: center;
     }
 }
 
