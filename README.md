@@ -1,7 +1,7 @@
 # IMDb_Clone
-Imdb clone
-Pages : 
-Register/login signin - Avan
+#Imdb clone
+#Pages : 
+#Register/login signin - Avan
 About us - Avan
 Home - Sagar
 Watch list - Swati
