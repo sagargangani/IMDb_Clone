@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://api.themoviedb.org/3/movie/top_rated?api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
   const tv_url =
     "https://api.themoviedb.org/3/tv/top_rated?api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
-
-  const popular =
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
   const options = {
     method: "GET",
     headers: {
@@ -50,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
       : "https://via.placeholder.com/150";
     const movieInfo = `
       <div class="card-image">
-        <img src="${imagePath}" alt="${movie.title}"/>
+        <img src="${imagePath}" alt="${movie.title}" />
       </div>
-      <div style="padding: 15px;" class="card-content">
-        <h2 style=" font-weight: bold;">${movie.title}</h2>
+      <div class="card-content">
+        <h2>${movie.title}</h2>
         <p><strong>Release Date:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ${movie.vote_average}</p>
-        <p>${movie.overview.slice(0, 150)} ...</p>
+        <p>${movie.overview}</p>
       </div>
     `;
 
@@ -75,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-image">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
-      <div style="padding: 15px;" class="card-content">
-        <h2 style="font-weight: bold;">${tv.name}</h2>
+      <div class="card-content">
+        <h2>${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
-        <p>${tv.overview.slice(0, 150)} ...</p>
+        <p>${tv.overview}</p>
       </div>
     `;
 
@@ -87,38 +84,3 @@ document.addEventListener("DOMContentLoaded", () => {
     return tvCard;
   }
 });
-
-function toggleTheme() {
-  const body = document.body;
-  body.classList.toggle("dark-theme");
-}
-
-async function fetchMovies() {
-  const apiUrl =
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return data.results.slice(0, 100);
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-}
-
-async function populateCarousel() {
-  const movies = await fetchMovies();
-  const carouselInner = document.querySelector(".carousel-inner");
-
-  movies.forEach((movie, index) => {
-    const isActive = index === 0 ? "active" : "";
-    carouselInner.innerHTML += `
-      <div class="carousel-item ${isActive}">
-        <img class="d-block w-100" src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="${movie.title}" />
-      </div>
-    `;
-  });
-}
-
-populateCarousel();

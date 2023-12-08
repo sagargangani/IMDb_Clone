@@ -1,0 +1,22 @@
+.movie-header{
+    display: block;
+}
+
+.movie_img{
+    display: block;
+  margin-left: 10%;
+  margin-right: auto;
+  padding-top: 8%;
+  width: 50%;
+  max-width: 15%;
+  border-radius: 25px;
+}
+
+.movie_name_logo{
+    display: flex;
+}
+.movie_name_logo h1{
+    padding-right: 50%;
+    padding-top: 25%;
+    color: black;
+}
