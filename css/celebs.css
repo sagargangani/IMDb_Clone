@@ -149,3 +149,22 @@
     font-size: 13px;
     padding: 5px 15px;
 }
+
+.actor-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 786px){
+    .image-wrapper img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 420px){
+    .celeb-wrapper {
+        width: 100%;
+    }
+}
