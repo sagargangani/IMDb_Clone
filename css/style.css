@@ -271,7 +271,7 @@ body {
   }
   .site-footer{
     color: black;
-      background-color: white;
+      background-color: white !important;
   }
   .site-footer .social-links a {
     color: black  ;
@@ -330,7 +330,7 @@ body {
   margin-right: 8px;
 }
 .search_btn{
-  margin-top: 20px;
+  /* margin-top: 10px;  */
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -408,6 +408,10 @@ body {
     display: none;
   }
 
+  .search-bar{
+    display: none;
+  }
+
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -433,7 +437,7 @@ body {
 }
 
 @media screen and (min-width: 768px){
-  .mobile-menu-toggler{
+  .mobile-menu-toggler, .hide-it{
     display: none;
   }
 }
@@ -447,4 +451,9 @@ body {
 /* Optional: Increase the size of the hamburger icon */
 .navbar-toggler-icon {
   font-size: 1.5rem; /* Change the font size as needed */
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
 }
