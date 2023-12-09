@@ -120,10 +120,12 @@ async function populateCarousel() {
     `;
   });
 }
+var element = document.getElementById("carouselExampleIndicators");
+if (typeof element != "undefined" && element != null) {
+  function toggleMenu() {
+    var mobileMenu = document.querySelector(".mobile-menu");
+    mobileMenu.classList.toggle("active");
+  }
 
-function toggleMenu() {
-  var mobileMenu = document.querySelector(".mobile-menu");
-  mobileMenu.classList.toggle("active");
+  populateCarousel();
 }
-
-populateCarousel();
