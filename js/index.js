@@ -115,10 +115,15 @@ async function populateCarousel() {
     const isActive = index === 0 ? "active" : "";
     carouselInner.innerHTML += `
       <div class="carousel-item ${isActive}">
-        <img class="d-block w-100" src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="${movie.title}" />
+        <img class="d-block w-90" src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="${movie.title}" />
       </div>
     `;
   });
+}
+
+function toggleMenu() {
+  var mobileMenu = document.querySelector(".mobile-menu");
+  mobileMenu.classList.toggle("active");
 }
 
 populateCarousel();
