@@ -53,17 +53,14 @@ function movieDetailsCard(data) {
     const movieDetails = `
         
 
-    <div className="card">
-    <img className="card-img" alt="" src=${imagePath} />
-
-    <div className="card-overlay">
-        <div className="card-title">${data.title}</div>
-        <div className="card_runtime">${data.runtime}
-          <span className="card_rating">${data.vote_average} <i className="fas fa-star"/></span>
-        </div>
-        <div className="card_description">${data.overview}</div>
-    </div>
-  </div>
+    <div class="card" style="justify-content : center; margin-left : 10%; margin-right : 10%; height: 30%;">
+  <img src="${imagePath}" class="card-img-top" alt="${data.title}" style="object-fit : cover; height : 5%;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
         
     `;
 
