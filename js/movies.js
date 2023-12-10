@@ -60,14 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
       : "https://via.placeholder.com/150";
     const movieInfo = `
-      <div class="card-image" onclick="redirect_To_Details(${movie.id})">
+
+
+
+    <div class="card-image" onclick="redirect_To_Details(${movie.id})">
         <img src="${imagePath}" alt="${movie.title}" />
       </div>
       <div class="card-content" onclick="redirect_To_Details(${movie.id})">
         <h2>${movie.title}</h2>
         <p><strong>Release Date:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ${movie.vote_average}</p>
-        <p>${movie.overview}</p>
+        <p>${movie.overview.slice(0,100)}</p>
       </div>
     `;
 
