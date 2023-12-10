@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
    
   });
 
+  function redirect_To_Details(tvId){
+    window.location.href = 'tv_showDetails.html';
+    localStorage.setItem('tv_Id', tvId);
+  }
+
   function loadNextPage(){
     
     const tv_url =
@@ -37,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const tvShows = data.results.slice(0, 50);
   
         tvShows.forEach((tv) => {
+          localStorage.setItem('tv_Id', tv.id);
           const tvCard = createTVShowCard(tv);
           tvContainer.appendChild(tvCard);
         });
@@ -54,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `https://image.tmdb.org/t/p/w500${tv.poster_path}`
       : "https://via.placeholder.com/150";
     const tvInfo = `
-      <div class="card-image">
+      <div class="card-image" onclick="redirect_To_Details(${tv.id})">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
-      <div class="card-content">
+      <div class="card-content" onclick="redirect_To_Details(${tv.id})">
         <h2>${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
@@ -68,4 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tvCard.innerHTML = tvInfo;
     return tvCard;
   }
-  
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark-theme");
+  }
