@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>IMDb Login</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- SignIn Section -->
+    <section id="login" class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <img
+            src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+            class="center"
+            alt="User Image"
+          />
+          <div class="card mt-5">
+            <div class="card-body">
+              <form id="loginForm">
+                <div class="form-group">
+                  <label for="username" class="font-weight-bold">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password" class="font-weight-bold"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                  />
+                </div>
+
+                <a
+                  for="forgot-password"
+                  class="forgotpassword"
+                  href="../html/forgotpassword.html"
+                  >Forgot Password?</a
+                >
+                <button
+                  type="button"
+                  onclick="login()"
+                  class="btn w-100 mt-3 submit-button btn-warning border-warning mb-3"
+                >
+                  Sign in
+                </button>
+              </form>
+              <div class="a-divider">
+                <div class="a-divider-inner">
+                  <h5 class="a-divider-innertext">New to IMDb?</h5>
+                </div>
+              </div>
+              <button
+                onclick="navigateToPage()"
+                id="create-account"
+                type="button"
+                class="btn btn-light btn w-100 mt-3 submit-button mb-3 create-account"
+              >
+                Create your IMDb account
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

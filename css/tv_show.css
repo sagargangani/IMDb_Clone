@@ -1,0 +1,19 @@
+.TV_header{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px;
+}
+.tv-card{
+    margin: 15px;
+}
+
+#next_button{
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+}
