@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Best Movie",
         description: "The most outstanding movie of the year.",
-        image: "https://via.placeholder.com/150",
+        image: "https://images.unsplash.com/photo-1510022079733-8b58aca7c4a9?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         title: "Director of the Year",
         description: "Celebrating the exceptional directorial achievements.",
-        image: "https://via.placeholder.com/150",
+        image: "https://images.unsplash.com/photo-1616341591186-91b23ad59a26?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       // Add more entries as needed
     ];
@@ -19,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Annual Film Festival",
         date: "2023-08-15",
-        image: "https://via.placeholder.com/150",
+        image: "https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         title: "Celebrity Awards Night",
         date: "2023-09-20",
-        image: "https://via.placeholder.com/150",
+        image: "https://images.unsplash.com/photo-1584634407036-a403356514cd?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       // Add more entries as needed
     ];
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const videosData = [
       {
         title: "Highlights of Best Movie",
-        videoUrl: "https://www.youtube.com/watch?v=example1",
+        videoUrl: "https://www.youtube.com/watch?v=9bZkp7q19f0",
       },
       {
         title: "Behind the Scenes: Director of the Year",
