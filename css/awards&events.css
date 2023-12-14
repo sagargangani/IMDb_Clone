@@ -4,12 +4,20 @@
 
 @media screen and (max-width: 768px) {
     .side-section{
-        margin-top: 8vh;
+        margin-top: 4vh;
     }
 }
 
 .side-section{
     margin-left: 3vw;
+}
+
+.best-categories{   
+    margin-right: 4vh;
+}
+
+.relevant-events{
+    margin-right: 4vh;
 }
 
 .card{
@@ -20,4 +28,15 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
+  }
+
+  #videosCarousel{
+    border-radius: 15px;
+  }
+
+  .dark-theme{
+    a{
+        /* color: rgb(184, 0, 0); */
+        color: burlywood;
+    }
   }
