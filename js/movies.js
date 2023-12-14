@@ -62,16 +62,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const movieInfo = `
 
 
-
-    <div class="card-image" onclick="redirect_To_Details(${movie.id})">
-        <img src="${imagePath}" alt="${movie.title}" />
+    <div class="card">
+      <div class="card-image" onclick="redirect_To_Details(${movie.id})">
+          <img src="${imagePath}" alt="${movie.title}" />
       </div>
       <div class="card-content" onclick="redirect_To_Details(${movie.id})">
-        <h2>${movie.title}</h2>
-        <p><strong>Release Date:</strong> ${movie.release_date}</p>
-        <p><strong>Rating:</strong> ${movie.vote_average}</p>
-        <p>${movie.overview.slice(0,100)}</p>
+          <h2>${movie.title}</h2>
+          <p><strong>Release Date:</strong> ${movie.release_date}</p>
+          <p><strong>Rating:</strong> ${movie.vote_average}</p>
+          <p>${movie.overview.slice(0,100)}</p>
       </div>
+    </div>
     `;
 
     movieCard.innerHTML = movieInfo;

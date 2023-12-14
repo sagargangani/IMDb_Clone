@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-theme");
+}
+
 function tvDetailsCard(data) {
     const movieDetailsContainer = document.createElement("div");
     movieDetailsContainer.classList.add("movie-details");

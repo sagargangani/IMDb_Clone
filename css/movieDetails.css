@@ -27,3 +27,31 @@
     margin-top: 2.5%;
   }
 
+  .col-md-4{
+    position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .col-md-4 img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .col-md-4:hover .play-icon {
+    opacity: 1;
+    cursor: pointer;
+  }

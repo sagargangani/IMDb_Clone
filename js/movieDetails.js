@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-theme");
+}
+
 function movieDetailsCard(data) {
     const movieDetailsContainer = document.createElement("div");
     movieDetailsContainer.classList.add("movie-details");
@@ -40,6 +45,9 @@ function movieDetailsCard(data) {
                 <!-- Movie Poster -->
                 <div class="col-md-4">
                     <img src="${imagePath}" alt="${data.title}" class="img-fluid">
+                    <div class="play-icon">
+                      <span>&#9658;</span>
+                    </div>
                 </div>
                 <!-- Movie Information -->
                 <div class="col-md-8">

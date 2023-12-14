@@ -60,6 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `https://image.tmdb.org/t/p/w500${tv.poster_path}`
       : "https://via.placeholder.com/150";
     const tvInfo = `
+
+    <div class="card">
       <div class="card-image" onclick="redirect_To_Details(${tv.id})">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
@@ -67,8 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <h2>${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
-        <p>${tv.overview}</p>
+        <p>${tv.overview.slice(0,100)}</p>
       </div>
+    </div>
     `;
 
     tvCard.innerHTML = tvInfo;
