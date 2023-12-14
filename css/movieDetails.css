@@ -2,7 +2,7 @@
 .img-fluid{
     border-radius: 5%;
     transition: 1s ease;
-    height: 90%     ;
+    height: 90%;
 }
 .img-fluid:hover{
     -webkit-transform: scale(1);
@@ -31,9 +31,10 @@
 
   .col-md-4{
     position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
   }
 
   .col-md-4 img {
@@ -59,7 +60,7 @@
   }
 
   .fa-star {
-    color: #f90; /* Set the color of the stars */
-    font-size: 20px; /* Set the size of the stars */
+    color: #f90; 
+    font-size: 20px; 
   }
   
