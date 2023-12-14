@@ -9,6 +9,8 @@
     -ms-transform: scale(1.1);
     transform: scale(1);
     transition: 1s ease;
+    background-color: black;
+    opacity: .5;
     }
 
   /* Movie Details Container */
@@ -55,3 +57,9 @@
     opacity: 1;
     cursor: pointer;
   }
+
+  .fa-star {
+    color: #f90; /* Set the color of the stars */
+    font-size: 20px; /* Set the size of the stars */
+  }
+  

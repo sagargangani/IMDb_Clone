@@ -40,13 +40,17 @@ function tvDetailsCard(data) {
     const movieDetails = `
         
     
-        <div class="movie-details-container" >
+        <div class="tvshow-details-container" >
             <div class="row">
                 <!-- Movie Poster -->
                 <div class="col-md-4">
                     <img src="${imagePath}" alt="${data.name}" class="img-fluid">
+                    <div class="play-icon">
+                      <span>&#9658;</span>
+                    </div>
                 </div>
-                <!-- Movie Information -->
+
+                <!-- Tv_Show Information -->
                 <div class="col-md-8">
                     <h1 class="mb-3">${data.name}</h1>
                     <p><strong>Last Season Release : </strong>${data.last_air_date}</p>

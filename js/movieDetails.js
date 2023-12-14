@@ -56,7 +56,7 @@ function movieDetailsCard(data) {
                     <p><strong>Genre : </strong>${data.genres.map((res) => ` ${res.name} `)}  
                     </p>
                     <p><strong>Duration : </strong>${data.runtime}</p
-                    <p><strong>Rating : </strong> ${data.vote_average}/10</p>
+                    <p><strong>Rating : <i class="fas fa-star"></i></strong> ${data.vote_average.toFixed(1)}/10</p>
                     <p><strong>Description : </strong>${data.overview}</p>
                     <br>
                     <br>
