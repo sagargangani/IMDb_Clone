@@ -1,3 +1,5 @@
+/* Author Name : Avan Panchal
+Student Id : C0895319 */
 function showAlert(message, alertType) {
   var alertDiv = document.createElement("div");
   alertDiv.className =

@@ -127,3 +127,7 @@ function toggleMenu() {
 }
 
 populateCarousel();
+
+function navigateToPage() {
+  location.href = "../html/login.html";
+}
