@@ -1,3 +1,6 @@
+// Author Name : Het Pandya
+// Student Id : C0892917 
+
 document.addEventListener("DOMContentLoaded", function () {
     const id = localStorage.getItem('movieId');
     const movie_url =
@@ -49,7 +52,9 @@ function movieDetailsCard(data) {
                       <span>&#9658;</span>
                     </div>
                 </div>
+                
                 <!-- Movie Information -->
+
                 <div class="col-md-8">
                     <h1 class="mb-3">${data.title}</h1>
                     <p><strong>Release Year : </strong>${data.release_date}</p>

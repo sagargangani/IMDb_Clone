@@ -1,3 +1,6 @@
+// Author Name : Het Pandya
+// Student Id : C0892917 
+
 document.addEventListener("DOMContentLoaded", function () {
     const id = localStorage.getItem('tv_Id');
     const movie_url =

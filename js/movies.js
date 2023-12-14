@@ -1,3 +1,6 @@
+// Author Name : Het Pandya
+// Student Id : C0892917 
+
 let current_page=1;
 
 document.addEventListener("DOMContentLoaded", () => {
