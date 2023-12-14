@@ -1,0 +1,42 @@
+.movie_header{
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px;
+}
+.movie-card{
+    margin: 15px;
+}
+
+#next_button{
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+}
+
+.card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover .card-content {
+      transform: translateY(0);
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9); /* Adjust as needed for your design */
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+.dark-theme{
+    .movie_header{
+        background-color: rgb(22, 22, 22);
+        color: whitesmoke;
+    }
+}

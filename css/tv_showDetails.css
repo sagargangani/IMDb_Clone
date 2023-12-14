@@ -1,0 +1,48 @@
+
+.img-fluid{
+    border-radius: 5%;
+    transition: 1s ease;
+    height: 90%     ;
+}
+.img-fluid:hover{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1.1);
+    transform: scale(1);
+    transition: 1s ease;
+    background-color: black;
+    opacity: .5;
+    }
+
+  /* Movie Details Container */
+  .tvshow-details-container {
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgb(94, 92, 92) 80%);
+
+  }
+  .col-md-8{
+    margin-top: 2.5%;
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .col-md-4:hover .play-icon {
+    opacity: 1;
+    cursor: pointer;
+
+  }
+
