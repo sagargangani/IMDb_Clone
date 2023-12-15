@@ -118,6 +118,10 @@ body {
   color: #fff;
 }
 
+#contact-page .form-btn:focus {
+  background-color: #ffc107;
+  color: #fff;
+}
 /* contact us options css */
 #contact-page .module.icon-card {
   position: relative;
@@ -301,4 +305,8 @@ body {
   .social-links {
     margin-top: 20px;
   }
+}
+
+.error-message {
+  margin: 2rem;
 }
