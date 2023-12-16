@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  isLoggedIn();
+
   const movie_url =
     "https://api.themoviedb.org/3/movie/top_rated?api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
   const tv_url =
@@ -49,10 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
       : "https://via.placeholder.com/150";
     const movieInfo = `
-      <div class="card-image">
+      <div class="card-image" onclick="redirect_To_Details(${
+        movie.id
+      },${true})">
         <img src="${imagePath}" alt="${movie.title}"/>
       </div>
-      <div style="padding: 15px;" class="card-content">
+      <div style="padding: 15px;" class="card-content" onclick="redirect_To_Details(${
+        movie.id
+      })">
         <h2 style=" font-weight: bold;">${movie.title}</h2>
         <p><strong>Release Date:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ${movie.vote_average}</p>
@@ -72,10 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `https://image.tmdb.org/t/p/w500${tv.poster_path}`
       : "https://via.placeholder.com/150";
     const tvInfo = `
-      <div class="card-image">
+      <div class="card-image" onclick="redirect_To_Details(${tv.id},${false})">
         <img src="${imagePath}" alt="${tv.name}" />
       </div>
-      <div style="padding: 15px;" class="card-content">
+      <div style="padding: 15px;" class="card-content" onclick="redirect_To_Details(${
+        tv.id
+      })">
         <h2 style="font-weight: bold;">${tv.name}</h2>
         <p><strong>First Air Date:</strong> ${tv.first_air_date}</p>
         <p><strong>Rating:</strong> ${tv.vote_average}</p>
@@ -127,3 +136,27 @@ function toggleMenu() {
 }
 
 populateCarousel();
+
+function navigateToPage() {
+  location.href = "../html/login.html";
+}
+
+function redirect_To_Details(Id, flag) {
+  if (flag === true) {
+    window.location.href = "movieDetails.html";
+    localStorage.setItem("movieId", Id);
+  } else {
+    window.location.href = "tv_showDetails.html";
+    localStorage.setItem("tv_Id", Id);
+  }
+}
+
+function isLoggedIn() {
+  if (localStorage.getItem("users")) {
+   $(document).find('#watchlist-menu').show();
+   $(document).find('#login-btn').hide();
+  } else {
+    $(document).find('#watchlist-menu').hide();
+    $(document).find('#login-btn').show();
+  }
+}
