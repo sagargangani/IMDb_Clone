@@ -173,13 +173,14 @@ function registerUser() {
     return;
   }
 
-  const newUser = { email, password };
+  const newUser = { email, password, birthYear, genderInputs };
   existingUsers.push(newUser);
 
   // Store the updated user list in localStorage
   localStorage.setItem("users", JSON.stringify(existingUsers));
 
   showAlert("Registration successful!", "success");
+  location.href = "../html/login.html";
   document.getElementById("registerForm").reset();
 
   // var transaction = db.transaction(["users"], "readwrite");
