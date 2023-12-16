@@ -70,14 +70,16 @@ function contactus() {
   }, 1000);
 }
 
-
 function toggleTheme() {
   const body = document.body;
   body.classList.toggle("dark-theme");
 }
 
-
 function toggleMenu() {
   var mobileMenu = document.querySelector(".mobile-menu");
   mobileMenu.classList.toggle("active");
+}
+
+function navigateToPage() {
+  location.href = "../html/login.html";
 }
