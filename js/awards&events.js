@@ -1,4 +1,5 @@
-// awards.js
+//  Author Name : Jayti Patel
+// Student Id : C0895313 
 document.addEventListener("DOMContentLoaded", () => {
 
   const bestCategoriesData = [
