@@ -1,5 +1,6 @@
+// Author Name : Sagar Gangani
+// Student Id : C0894464
 document.addEventListener("DOMContentLoaded", () => {
-
   isLoggedIn();
 
   const movie_url =
@@ -153,10 +154,10 @@ function redirect_To_Details(Id, flag) {
 
 function isLoggedIn() {
   if (localStorage.getItem("users")) {
-   $(document).find('#watchlist-menu').show();
-   $(document).find('#login-btn').hide();
+    $(document).find("#watchlist-menu").show();
+    $(document).find("#login-btn").hide();
   } else {
-    $(document).find('#watchlist-menu').hide();
-    $(document).find('#login-btn').show();
+    $(document).find("#watchlist-menu").hide();
+    $(document).find("#login-btn").show();
   }
 }
