@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Celebs | IMDB Clone</title>
     <link
+      rel="icon"
+      href="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png"
+      type="image/x-icon"
+    />
+
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
@@ -16,338 +22,532 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/celebs.css" />
-
-</head>
+  </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <div class="logo">
-          <h1>IMDb</h1>
-        </div>
-        <nav class="main-navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="tv_show.html">TV Shows</a></li>
-            <li><a href="celebs.html">Celebrities</a></li>
-            <li><a href="#">News</a></li>
+      <nav class="navbar navbar-expand-lg h-100 navbar-dark">
+        <button class="navbar-brand rounded-2" href="index.html">IMDb</button>
+        <button
+          class="navbar-toggler mobile-menu-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tv_show.html">TV Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="celebs.html">Celebrities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="awards&events.html"
+                >Awards & Events</a>
+            </li>
+            <li class="nav-item hide-it">
+              <a class="nav-link" href="#">Search</a>
+            </li>
+            <li class="nav-item hide-it">
+              <a class="nav-link" href="./login.html">Login</a>
+            </li>
           </ul>
-        </nav>
-        <div class="search-bar">
-          <input
-            type="text"
-            placeholder="Search movies, TV shows, celebrities..."
-          />
-          <button>Search</button>
-          <button style="margin-right: 50px">Login</button>
         </div>
-        <div style="margin-top: 10px; cursor: pointer">
-          <i
-            class="fa-solid fa-sun fa-xl toggle_theme"
-            onclick="toggleTheme()"
-          ></i>
+        <div class="search_btn">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search movies, TV shows, celebrities..."
+            />
+            <button class="rounded-2 search">Search</button>
+            <button
+              class="rounded-2"
+              style="margin-right: 50px"
+              onclick="navigateToPage()"
+            >
+              Login
+            </button>
+          </div>
+          <div
+            style="margin-top: -2.9rem; cursor: pointer; display: inline-block"
+          >
+            <i
+              class="fa-solid fa-sun fa-xl toggle_theme"
+              onclick="toggleTheme()"
+            ></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-wrapper">
+      <div>
+        <div class="row">
+          <div class="col-12">
+            <h1 class="section-header mb-4">Most Popular Celebs</h1>
+            <div class="row">
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Vanessa Kirby"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BOTU3N2U4NDUtYWE1Zi00ZTc1LWE3NWItOWE5ZWNjYmRhODg3XkEyXkFqcGdeQXVyMzY4ODI3NDA@._V1_.jpg"
+                    alt="Vanessa Kirby"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Vanessa Kirby</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Producer
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Soundtrack
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Yasmin Finney"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://cms.doctorwho.tv/sites/default/files/2022-05/rose-instagramfacebook-c.jpg"
+                    alt="Yasmin Finney"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Yasmin Finney</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Mary Elizabeth Winstead"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BODVlNmU5NzgtM2Q2ZC00ZjQ4LThiNmMtZDNlYzU2OGQwYzNmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+                    alt="Mary Elizabeth Winstead"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Mary Elizabeth Winstead</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Producer
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Soundtrack
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Juno Temple"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BODVlNmU5NzgtM2Q2ZC00ZjQ4LThiNmMtZDNlYzU2OGQwYzNmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+                    alt="Juno Temple"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Juno Temple</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Soundtrack
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Tom Blyth"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BOWVjOTVlMTQtMTQ2Ni00NGJiLWEzMTYtN2UxYTI0ZjE1NTczXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg"
+                    alt="Tom Blyth"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Tom Blyth</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actor
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Producer
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Ridley Scott"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BMGJkOGM5OWEtNDYxMy00Njg4LWExNjAtY2ZlNWNlNzVhNDk4XkEyXkFqcGdeQXVyNDkzNTM2ODg@._V1_.jpg"
+                    alt="Ridley Scott"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Ridley Scott</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Producer
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Director
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Production Designer
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Rachel Zegler"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://s.abcnews.com/images/GMA/230317_gma_digital_rachel_zegler_hpMain_4x5_608.jpg"
+                    alt="Rachel Zegler"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Rachel Zegler</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Soundtrack
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Anya Taylor-Joy"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://images.seattletimes.com/wp-content/uploads/2020/12/urn-publicid-ap-org-496d3d9302dd8d24b8f7845673bfbfc9YE-Breakthrough_Entertainers_21693.jpg?d=2040x1531"
+                    alt="Anya Taylor-Joy"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Anya Taylor-Joy</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Soundtrack
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Sydney Sweeney"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BOTVjOTkxNjMtNDJiYS00YzEzLThmZTItZjJhM2E4NWQyM2Q2XkEyXkFqcGdeQXVyNzM1NTU0NA@@._V1_.jpg"
+                    alt="Sydney Sweeney"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Sydney Sweeney</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Producer
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper"
+                title="Jennifer Lawrence"
+              >
+                <div class="image-wrapper">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BOTU3NDE5MDQ4MV5BMl5BanBnXkFtZTgwMzE5ODQ3MDI@._V1_FMjpg_UX1000_.jpg"
+                    alt="Jennifer Lawrence"
+                  />
+                </div>
+                <div
+                  class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100"
+                >
+                  <b class="actor-name">Jennifer Lawrence</b>
+                  <span
+                    class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100"
+                  >
+                    Actress
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Producer
+                    <i class="fa fa-circle me-1 ms-1"></i>
+                    Writer
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h1 class="section-header mt-4 mb-4">Celebrity News</h1>
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTgxNzg2MjUwOF5BMl5BanBnXkFtZTgwMDk5NzE4NTE@._V1_QL75_UX280_CR0,3,280,414_.jpg"
+                    alt="‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award Honorees"
+                  />
+                </div>
+                <div class="col-md-9  p-0">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      Action star Jason Statham considers David Ayer’s “The
+                      Beekeeper,” which opens next year, as one of his buzziest
+                      movies yet.
+                    </h5>
+                    <p class="card-text">
+                      “I can’t wait for people to see that. It’s really
+                      sophisticated and cool, full of heart and excitement,” he
+                      said Thursday at the Red Sea Film Festival. “It’s a great
+                      film. The result is obviously yet to be seen, but I’m
+                      really, really proud of the movie.”
+                      <br />
+                      <br />
+                      The film tells the story of Adam Clay, a man who lives in
+                      the barn of an old lady...
+                    </p>
+                  </div>
+                  <p
+                    class="card-footer mb-0 align-items-center card-footer celeb-sub-details d-inline-flex mb-0 w-100"
+                  >
+                    12/7/2023
+                    <i class="fa fa-circle ms-2 me-2"></i> by Etan
+                    <i class="fa fa-circle ms-2 me-2"></i>
+                    <a href="javascript:;">Variety - Film News</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BM2U0NTk2NWItMmI1Mi00ODNlLTgxYzMtOTkyOTU4MmFjOGZjXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_QL75_UX280_CR0,0,280,280_.jpg"
+                    alt="Norman Lear, Sitcom Genius and Citizen Activist, Dies at 101"
+                  />
+                </div>
+                <div class="col-md-9 p-0">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      Norman Lear, Sitcom Genius and Citizen Activist, Dies at
+                      101
+                    </h5>
+                    <p class="card-text">
+                      Norman Lear, the writer, producer and citizen activist who
+                      coalesced topical conflict and outrageous comedy in such
+                      wildly popular sitcoms as All in the Family, Maude, Good
+                      Times, Mary Hartman, Mary Hartman and The Jeffersons, has
+                      died.
+                      <br /><br />
+                      He was 101. Lear died Tuesday at his home in Los Angeles
+                      surrounded by...
+                    </p>
+                  </div>
+                  <p
+                    class="card-footer mb-0 align-items-center card-footer celeb-sub-details d-inline-flex mb-0 w-100"
+                  >
+                    12/6/2023
+                    <i class="fa fa-circle ms-2 me-2"></i> by Mike Barnes
+                    <i class="fa fa-circle ms-2 me-2"></i>
+                    <a href="javascript:;"
+                      >The Hollywood Reporter - Movie News</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12 more-news-wrapper">
+            <h2 class="section-header mt-4 mb-4">More News</h2>
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-9 p-0">
+                  <div class="card-body  p-2">
+                    <h5 class="card-title fw-bold">
+                      ‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award
+                      Honorees
+                    </h5>
+                    <span class="date-content">
+                      12/7/2023 <i class="fa fa-circle"></i> by Etan
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_QL75_UX144_CR0,0,144,213_.jpg"
+                    alt="‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award Honorees"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-9 p-0">
+                  <div class="card-body p-2">
+                    <h5 class="card-title fw-bold">
+                      ‘Avatar 3’ Will Not Be Titled ‘Avatar: The Seed Bearer’
+                      Despite It Once...
+                    </h5>
+                    <span class="date-content">
+                      12/7/2023 <i class="fa fa-circle"></i> by Zack Sharf
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BMzdjNjExMTgtZGFmNS00ZWRjLWJmNjAtOTliYzJjYjcxMWFhXkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_QL75_UX144_CR0,1,144,213_.jpg"
+                    alt="‘Avatar 3’ Will Not Be Titled ‘Avatar: The Seed Bearer’ Despite It Once Being Considered; Producer Jon Landau Says ‘That’s Getting Changed’ on Wikipedia"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-9 p-0">
+                  <div class="card-body p-2">
+                    <h5 class="card-title fw-bold">
+                      David Ayer Teases His ‘Suicide Squad’ Cut: “It’s Coming” &
+                      ...
+                    </h5>
+                    <span class="date-content">
+                      12/7/2023 <i class="fa fa-circle"></i> by Ned Booth
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BMjM1OTMxNzUyM15BMl5BanBnXkFtZTgwNjYzMTIzOTE@._V1_QL75_UX144_CR0,0,144,213_.jpg"
+                    alt="David Ayer Teases His ‘Suicide Squad’ Cut: “It’s Coming” & “Something’s..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 card mb-4">
+              <div class="row g-0">
+                <div class="col-md-9 p-0">
+                  <div class="card-body p-2">
+                    <h5 class="card-title fw-bold">
+                      Russell Crowe, Rami Malek & Michael Shannon Set For
+                      James...
+                    </h5>
+                    <span class="date-content">
+                      12/7/2023 <i class="fa fa-circle"></i> by Matt Grobar
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BODA3OTM4ODU0MV5BMl5BanBnXkFtZTgwNjQ5Njg3NjM@._V1_QL75_UX144_CR0,0,144,213_.jpg"
+                    alt="Russell Crowe, Rami Malek & Michael Shannon Set For James Vanderbilt’s Historical Drama ‘Nuremberg’..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 card">
+              <div class="row g-0">
+                <div class="col-md-9 p-0">
+                  <div class="card-body p-2">
+                    <h5 class="card-title fw-bold">
+                      Benjamin Zephaniah, Poet and ‘Peaky Blinders’ Actor, Dies
+                      at 65 ...
+                    </h5>
+                    <span class="date-content">
+                      12/5/2023 <i class="fa fa-circle"></i> by Ellise Shafer
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3 news-cover p-0">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNTE4MzA1NTU2N15BMl5BanBnXkFtZTgwMDMwOTgzNDM@._V1_QL75_UX144_CR0,2,144,213_.jpg"
+                    alt="Benjamin Zephaniah, Poet and ‘Peaky Blinders’ Actor, Dies at 65"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-   
-    <main class="main-wrapper">
-        <div>
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="section-header mb-4">Most Popular Celebs</h1>
-                    <div class="row">
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Vanessa Kirby">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BOTU3N2U4NDUtYWE1Zi00ZTc1LWE3NWItOWE5ZWNjYmRhODg3XkEyXkFqcGdeQXVyMzY4ODI3NDA@._V1_.jpg" alt="Vanessa Kirby" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Vanessa Kirby</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Producer
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Soundtrack
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Yasmin Finney">
-                            <div class="image-wrapper">
-                                <img src="https://cms.doctorwho.tv/sites/default/files/2022-05/rose-instagramfacebook-c.jpg" alt="Yasmin Finney" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Yasmin Finney</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Mary Elizabeth Winstead">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BODVlNmU5NzgtM2Q2ZC00ZjQ4LThiNmMtZDNlYzU2OGQwYzNmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Mary Elizabeth Winstead" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Mary Elizabeth Winstead</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Producer
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Soundtrack
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Juno Temple">
-                            <div class="image-wrapper">
-                                <img src="https://static.wikia.nocookie.net/justintimberlake/images/1/13/A7fe7e7ee48a10c4d159f190bdf3a7eb.jpg/revision/latest?cb=20210205202815" alt="Juno Temple" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Juno Temple</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Soundtrack
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Tom Blyth">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BOWVjOTVlMTQtMTQ2Ni00NGJiLWEzMTYtN2UxYTI0ZjE1NTczXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg" alt="Tom Blyth" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Tom Blyth</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actor
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Producer
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Ridley Scott">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BMGJkOGM5OWEtNDYxMy00Njg4LWExNjAtY2ZlNWNlNzVhNDk4XkEyXkFqcGdeQXVyNDkzNTM2ODg@._V1_.jpg" alt="Ridley Scott" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Ridley Scott</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Producer
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Director
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Production Designer
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Rachel Zegler">
-                            <div class="image-wrapper">
-                                <img src="https://s.abcnews.com/images/GMA/230317_gma_digital_rachel_zegler_hpMain_4x5_608.jpg" alt="Rachel Zegler" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Rachel Zegler</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Soundtrack
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Anya Taylor-Joy">
-                            <div class="image-wrapper">
-                                <img src="https://images.seattletimes.com/wp-content/uploads/2020/12/urn-publicid-ap-org-496d3d9302dd8d24b8f7845673bfbfc9YE-Breakthrough_Entertainers_21693.jpg?d=2040x1531" alt="Anya Taylor-Joy" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Anya Taylor-Joy</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Soundtrack
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Sydney Sweeney">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BOTVjOTkxNjMtNDJiYS00YzEzLThmZTItZjJhM2E4NWQyM2Q2XkEyXkFqcGdeQXVyNzM1NTU0NA@@._V1_.jpg" alt="Sydney Sweeney" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Sydney Sweeney</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Producer
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="align-content-center col-lg-2 col-md-3 col-sm-4 col-6 d-flex flex-wrap justify-content-center mb-3 cursor-pointer celeb-wrapper" title="Jennifer Lawrence">
-                            <div class="image-wrapper">
-                                <img src="https://m.media-amazon.com/images/M/MV5BOTU3NDE5MDQ4MV5BMl5BanBnXkFtZTgwMzE5ODQ3MDI@._V1_FMjpg_UX1000_.jpg" alt="Jennifer Lawrence" />
-                            </div>
-                            <div class="align-content-center celeb-details d-flex flex-wrap justify-content-center w-100">
-                                <b class="actor-name">Jennifer Lawrence</b>
-                                <span class="align-items-center celeb-sub-details d-inline-flex flex-wrap justify-content-center w-100">
-                                    Actress
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Producer
-                                    <i class="fa fa-circle me-1 ms-1"></i>
-                                    Writer
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 col-sm-12">
-                    <h1 class="section-header mt-4 mb-4">Celebrity News</h1>
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-3 news-cover">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTgxNzg2MjUwOF5BMl5BanBnXkFtZTgwMDk5NzE4NTE@._V1_QL75_UX280_CR0,3,280,414_.jpg" alt="‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award Honorees">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold"> Action star Jason Statham considers David Ayer’s “The Beekeeper,” which opens next year, as one of his buzziest movies yet.</h5>
-                                  <p class="card-text">
-                                    “I can’t wait for people to see that. It’s really sophisticated and cool, full of heart and excitement,” he said Thursday at the Red Sea Film Festival. “It’s a great film. The result is obviously yet to be seen, but I’m really, really proud of the movie.”
-                                    <br/>
-                                    <br/>
-                                    The film tells the story of Adam Clay, a man who lives in the barn of an old lady...
-                                  </p>
-                                  
-                                </div>
-                                <p class="card-footer mb-0 align-items-center card-footer celeb-sub-details d-inline-flex mb-0 w-100">
-                                    12/7/2023 
-                                    <i class="fa fa-circle ms-2 me-2"></i> by Etan 
-                                    <i class="fa fa-circle ms-2 me-2"></i> 
-                                    <a href="javascript:;">Variety - Film News</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-3 news-cover">
-                            <img src="https://m.media-amazon.com/images/M/MV5BM2U0NTk2NWItMmI1Mi00ODNlLTgxYzMtOTkyOTU4MmFjOGZjXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_QL75_UX280_CR0,0,280,280_.jpg" alt="Norman Lear, Sitcom Genius and Citizen Activist, Dies at 101">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">Norman Lear, Sitcom Genius and Citizen Activist, Dies at 101</h5>
-                                  <p class="card-text">
-                                    Norman Lear, the writer, producer and citizen activist who coalesced topical conflict and outrageous comedy in such wildly popular sitcoms as All in the Family, Maude, Good Times, Mary Hartman, Mary Hartman and The Jeffersons, has died.
-                                    <br/><br/>
-                                    He was 101. Lear died Tuesday at his home in Los Angeles surrounded by...
-                                  </p>
-                                </div>
-                                <p class="card-footer mb-0 align-items-center card-footer celeb-sub-details d-inline-flex mb-0 w-100">
-                                    12/6/2023 
-                                    <i class="fa fa-circle ms-2 me-2"></i> by Mike Barnes 
-                                    <i class="fa fa-circle ms-2 me-2"></i> 
-                                    <a href="javascript:;">The Hollywood Reporter - Movie News</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-sm-12 more-news-wrapper">
-                    <h2 class="section-header mt-4 mb-4">More News</h2>
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award Honorees</h5>
-                                  <span class="date-content">
-                                    12/7/2023 <i class="fa fa-circle"></i> by Etan 
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 news-cover">
-                                <img src="https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_QL75_UX144_CR0,0,144,213_.jpg" alt="‘Barbie,’ ‘Oppenheimer’ Among AFI 2023 Film and TV Award Honorees">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">‘Avatar 3’ Will Not Be Titled ‘Avatar: The Seed Bearer’ Despite It Once...</h5>
-                                  <span class="date-content">
-                                    12/7/2023 <i class="fa fa-circle"></i> by Zack Sharf
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 news-cover">
-                                <img src="https://m.media-amazon.com/images/M/MV5BMzdjNjExMTgtZGFmNS00ZWRjLWJmNjAtOTliYzJjYjcxMWFhXkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_QL75_UX144_CR0,1,144,213_.jpg" alt="‘Avatar 3’ Will Not Be Titled ‘Avatar: The Seed Bearer’ Despite It Once Being Considered; Producer Jon Landau Says ‘That’s Getting Changed’ on Wikipedia">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">David Ayer Teases His ‘Suicide Squad’ Cut: “It’s Coming” & ...</h5>
-                                  <span class="date-content">
-                                    12/7/2023 <i class="fa fa-circle"></i> by Ned Booth 
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 news-cover">
-                                <img src="https://m.media-amazon.com/images/M/MV5BMjM1OTMxNzUyM15BMl5BanBnXkFtZTgwNjYzMTIzOTE@._V1_QL75_UX144_CR0,0,144,213_.jpg" alt="David Ayer Teases His ‘Suicide Squad’ Cut: “It’s Coming” & “Something’s...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 card mb-4">
-                        <div class="row g-0">
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">Russell Crowe, Rami Malek & Michael Shannon Set For James...</h5>
-                                  <span class="date-content">
-                                    12/7/2023 <i class="fa fa-circle"></i> by Matt Grobar
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 news-cover">
-                                <img src="https://m.media-amazon.com/images/M/MV5BODA3OTM4ODU0MV5BMl5BanBnXkFtZTgwNjQ5Njg3NjM@._V1_QL75_UX144_CR0,0,144,213_.jpg" alt="Russell Crowe, Rami Malek & Michael Shannon Set For James Vanderbilt’s Historical Drama ‘Nuremberg’...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 card">
-                        <div class="row g-0">
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title fw-bold">Benjamin Zephaniah, Poet and ‘Peaky Blinders’ Actor, Dies at 65 ...</h5>
-                                  <span class="date-content">
-                                    12/5/2023 <i class="fa fa-circle"></i> by Ellise Shafer
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 news-cover">
-                                <img src="https://m.media-amazon.com/images/M/MV5BNTE4MzA1NTU2N15BMl5BanBnXkFtZTgwMDMwOTgzNDM@._V1_QL75_UX144_CR0,2,144,213_.jpg" alt="Benjamin Zephaniah, Poet and ‘Peaky Blinders’ Actor, Dies at 65">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
     </main>
 
     <footer class="site-footer">
@@ -377,6 +577,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/movies.js"></script>
     <!-- <script src="../js/index.js"></script> -->
   </body>
 </html>

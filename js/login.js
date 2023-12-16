@@ -1,3 +1,6 @@
+/* Author Name : Avan Panchal
+Student Id : C0895319 */
+
 function navigateToPage() {
   location.href = "../html/register.html";
 }
@@ -79,6 +82,7 @@ function login() {
 
   if (user.password === password) {
     showAlert("Login successful!", "success");
+    location.href = "../html/index.html";
     document.getElementById("registerForm").reset();
     // You can redirect to a dashboard or perform other actions after login.
   } else {

@@ -1,3 +1,5 @@
+/* Author Name : Avan Panchal
+Student Id : C0895319 */
 body {
   font-family: Arial, sans-serif;
 }
@@ -75,4 +77,92 @@ body {
   align-items: center;
   margin-bottom: 1rem;
   margin-top: -0.7rem;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  background-color: #343a40;
+  color: #fff;
+  padding: 2rem 10rem;
+}
+
+.site-footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.footer-info {
+  margin-top: 2vh;
+}
+
+.site-footer .footer-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer .footer-navigation ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.site-footer .footer-navigation ul li:last-child {
+  margin-right: 0;
+}
+
+.site-footer .footer-navigation ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer .footer-info {
+  text-align: center;
+}
+
+.site-footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.site-footer .social-links a i {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1040px) {
+  .site-footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .site-footer {
+    padding: 1rem 1rem;
+  }
+  .social-links {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .site-footer {
+    padding: 1rem 1rem;
+  }
+  .social-links {
+    margin-top: 20px;
+  }
+}
+
+#progressBarContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#progressBar {
+  background-color: #007bff; /* Adjust the color as needed */
 }

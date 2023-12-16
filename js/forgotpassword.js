@@ -1,3 +1,6 @@
+/* Author Name : Avan Panchal
+Student Id : C0895319 */
+
 // const request = indexedDB.open("userDB", 1);
 // let db;
 
