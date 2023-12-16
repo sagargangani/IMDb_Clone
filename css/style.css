@@ -17,6 +17,10 @@ body {
     padding: 15px 0;
 }
 
+.contactus{
+  color: white;
+}
+
 .nav-item a{
   color: white;
 }
@@ -279,6 +283,9 @@ body {
     .site-header{
       background-color: white;
       color: #343a40;
+    }
+    .contactus{
+      color: black;
     }
     .main-navigation ul li a {
       color:black;
