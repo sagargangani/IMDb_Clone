@@ -80,3 +80,8 @@ function tvDetailsCard(data) {
     `;
   return movieDetails;
 }
+
+function toggleMenu() {
+  var mobileMenu = document.querySelector(".mobile-menu");
+  mobileMenu.classList.toggle("active");
+}
