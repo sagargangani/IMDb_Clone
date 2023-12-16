@@ -17,12 +17,80 @@ Student Id : C0895319 -->
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg h-100 navbar-dark">
+        <button class="navbar-brand rounded-2" href="index.html">IMDb</button>
+        <button
+          class="navbar-toggler mobile-menu-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tv_show.html">TV Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="celebs.html">Celebrities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="awards&events.html">Awards & Events</a>
+            </li>
+            <li class="nav-item" id="watchlist-menu">
+              <a class="nav-link" href="watchlist.html">My Watchlist</a>
+            </li>
+            <li class="nav-item hide-it">
+              <a class="nav-link" href="#">Search</a>
+            </li>
+          </ul>
+        </div>
+        <div class="search_btn">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search movies, TV shows, celebrities..."
+            />
+            <button class="rounded-2 search">Search</button>
+            <button class="rounded-2" onclick="navigateToPage()" id="login-btn">
+              Login
+            </button>
+          </div>
+          <span class="theme-btn">
+            <i
+              class="fa-solid fa-sun fa-xl toggle_theme"
+              onclick="toggleTheme()"
+            ></i>
+          </span>
+        </div>
+      </nav>
+    </header>
     <main id="contact-page">
       <!-- Banner image -->
       <div class="banner-image">
@@ -80,7 +148,10 @@ Student Id : C0895319 -->
       </div>
       <div class="error-message"></div>
       <!-- Contact us section starts here -->
-      <section class="container">
+      <section class="container" style="
+        display: block;
+        max-width: 1140px;
+      ">
         <h1 class="sub-heading">Reach out to us</h1>
         <p>
           If you need help with anything, get in touch today by filling in

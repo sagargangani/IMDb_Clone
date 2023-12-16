@@ -69,3 +69,15 @@ function contactus() {
     $("#thankYouModal").modal("show");
   }, 1000);
 }
+
+
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-theme");
+}
+
+
+function toggleMenu() {
+  var mobileMenu = document.querySelector(".mobile-menu");
+  mobileMenu.classList.toggle("active");
+}
