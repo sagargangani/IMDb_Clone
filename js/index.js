@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  isLoggedIn();
+
   const movie_url =
     "https://api.themoviedb.org/3/movie/top_rated?api_key=93d7a9f8ea42eb50058f6fc4f4396c4e";
   const tv_url =
@@ -145,5 +148,15 @@ function redirect_To_Details(Id, flag) {
   } else {
     window.location.href = "tv_showDetails.html";
     localStorage.setItem("tv_Id", Id);
+  }
+}
+
+function isLoggedIn() {
+  if (localStorage.getItem("users")) {
+   $(document).find('#watchlist-menu').show();
+   $(document).find('#login-btn').hide();
+  } else {
+    $(document).find('#watchlist-menu').hide();
+    $(document).find('#login-btn').show();
   }
 }
