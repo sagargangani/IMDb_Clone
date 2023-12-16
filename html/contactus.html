@@ -1,10 +1,22 @@
+<!-- Author Name : Avan Panchal
+Student Id : C0895319 -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IMDb Contact us</title>
+    <title>IMDB Contact us</title>
     <link rel="stylesheet" href="../css/contactus.css" />
+    <link
+      rel="icon"
+      href="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
@@ -17,7 +29,56 @@
         <!-- Overlay to give faded effect -->
         <div class="overlay"></div>
       </div>
-
+      <div
+        class="modal fade"
+        id="thankYouModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="thankYouModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+              <h5 class="modal-title" id="thankYouModalLabel">
+                Thank You for Contacting Us!
+              </h5>
+              <button
+                type="button"
+                class="close text-white"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="text-center">
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/04/22/11/59/thank-you-5077738_640.jpg"
+                  alt="Thank You Image"
+                  class="img-fluid mb-3"
+                  style="max-width: 200px"
+                />
+              </div>
+              <p class="lead">
+                We appreciate your message and will get back to you as soon as
+                possible.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-warning"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="error-message"></div>
       <!-- Contact us section starts here -->
       <section class="container">
         <h1 class="sub-heading">Reach out to us</h1>
@@ -31,7 +92,7 @@
           <!-- first column for contact us form -->
           <div class="column-8">
             <div class="form-container">
-              <form>
+              <form id="contactusForm">
                 <div class="form-field-wrapper">
                   <label class="form-label" for="name">Name</label>
                   <input
@@ -141,7 +202,7 @@
                         title="call"
                         href="mailto:contact@trailfinders.com"
                       >
-                        contact@trailfinders.com
+                        contact@imdb.com
                       </a>
                     </p>
                   </div>
@@ -151,10 +212,32 @@
           </div>
         </div>
       </section>
+      <footer class="site-footer">
+        <div class="site-footer-container">
+          <div class="footer-info">
+            <p>&copy; 2023 IMDb Clone. All Rights Reserved.</p>
+          </div>
+
+          <div class="social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
     </main>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/contactus.js"></script>
   </body>
 </html>

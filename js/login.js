@@ -1,3 +1,6 @@
+/* Author Name : Avan Panchal
+Student Id : C0895319 */
+
 function navigateToPage() {
   location.href = "../html/register.html";
 }

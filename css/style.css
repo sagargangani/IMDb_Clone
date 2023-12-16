@@ -12,15 +12,28 @@ body {
   }
   
   .site-header {
-    background-color: #333;
+    background-color: #343a40;
     color: #fff;
     padding: 15px 0;
+}
+
+.nav-item a{
+  color: white;
 }
 
 .site-header .logo h1 {
     margin: 0;
     font-size: 2em;
     cursor: pointer;
+    color: white;
+  }
+  .logo h1{
+    background-color: #ff9900;
+    color: white;
+    padding: 7px;
+    font-weight: bolder;
+    border-radius: 10px;
+    font-style: italic;
   }
   .logo h1{
     background-color: #ff9900;
@@ -139,6 +152,18 @@ body {
 
   }
 
+  .navbar-container {
+    display: flex;
+    align-items: stretch; /* Stretch items to fill the height */
+    height: 100%; /* Set the height to 100% of the parent */
+  }
+
+  .navbar {
+    display: flex;
+    flex-grow: 1; /* Grow to fill the available space */
+    align-items: center; /* Center contents vertically */
+  }
+
 .tv-card {
     width: 300px;
     border: 1px solid #ccc;
@@ -193,7 +218,7 @@ body {
   .site-footer {
     display: flex;
     align-items: center;
-    background-color: #333;
+    background-color: #343a40;
     color: #fff;
     padding: 20px 0;
   }
@@ -246,23 +271,39 @@ body {
     color: white;
     background-color: black;
     .site-header{
-      color: black;
       background-color: white;
+      color: #343a40;
     }
     .main-navigation ul li a {
       color:black;
   }
   .site-footer{
     color: black;
-      background-color: white;
+      background-color: white !important;
   }
   .site-footer .social-links a {
     color: black  ;
   }
+
+  /* .bg-dark{
+    background-color: white !important;
+  } */
+
+  .nav-link{
+    color: black !important;
+  }
+
+  .navbar-toggler-icon{
+    color: black;
+    background-color: #ff9900;
+    border-radius: 10px;
+    padding: 6px;
+  }
 }
 
 .carousel-item{
-  height: 65vh;
+  height: 50vh;
+  cursor: pointer;
 }
 
 .carousel-item img{
@@ -271,7 +312,7 @@ body {
   height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1040px) {
 .container{
   flex-direction: column;
   /* justify-content: center; */
@@ -286,6 +327,59 @@ body {
 
 .search-bar{
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+}
+@media screen and (max-width: 768px) {
+  .search-bar{
+    margin-top: 20px;
+  } 
+  
+.search-bar input[type="text"] {
+  padding: 2px;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.search{
+  margin-left: 1px;
+  margin-right: 8px;
+}
+.search_btn{
+  /* margin-top: 10px;  */
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.toggle_theme{
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  width: 150px;
+  margin-right: 10px;
+  border-radius: 10px;
+
+}
+
+.tv-card .card-content {
+  padding: 25px;
+}
+
+.movie-card .card-content{
+  font-size: 200;
+}
+
+.tv-card .card-content{
+  font-size: 200;
 }
 
 .movie-container{
@@ -309,4 +403,74 @@ body {
   .site-footer{
     margin-top: 25px;
   }
+}
+
+.desktop-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop-menu li {
+  margin-right: 20px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .main-navigation ul {
+    display: none;
+  }
+
+  .search-bar{
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu li {
+    margin-bottom: 10px;
+  }
+
+  .mobile-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .mobile-menu-toggler{
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .mobile-menu-toggler, .hide-it{
+    display: none;
+  }
+}
+
+/* Ensure the hamburger icon is visible */
+.navbar-toggler {
+  border: 1px solid #fff; /* Change the color of the icon border */
+  color: #fff !important; /* Change the color of the icon */
+}
+
+/* Optional: Increase the size of the hamburger icon */
+.navbar-toggler-icon {
+  font-size: 1.5rem; /* Change the font size as needed */
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
 }
