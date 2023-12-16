@@ -636,3 +636,7 @@ body {
   }
 
 }
+
+.navbar-dark .navbar-toggler {
+  background-color: #ff9900;
+}
