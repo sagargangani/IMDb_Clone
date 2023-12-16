@@ -1,6 +1,14 @@
 /* Author Name : Avan Panchal
 Student Id : C0895319 */
 
+$(document).ready(function () {
+  $("#birthYear").datepicker({
+    format: "yyyy",
+    viewMode: "years",
+    minViewMode: "years",
+    autoclose: true,
+  });
+});
 // var db;
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Open or create a database
@@ -57,11 +65,51 @@ function showAlert(message, alertType) {
   }, 3000);
 }
 
+function calculateProgress() {
+  var totalFields = 7;
+  var completedFields = 0;
+
+  if (
+    document.getElementById("name").value.trim() !== "" ||
+    document.getElementById("name").value != null
+  )
+    completedFields++;
+  if (document.getElementById("birthYear").value.trim() !== "")
+    completedFields++;
+  if (document.querySelector('input[name="gender"]:checked') !== null)
+    completedFields++;
+  if (document.getElementById("comments").value.trim() !== "")
+    completedFields++;
+  if (document.getElementById("email").value.trim() !== "") completedFields++;
+  if (document.getElementById("password").value.trim() !== "")
+    completedFields++;
+  if (document.getElementById("confirmpassword").value.trim() !== "")
+    completedFields++;
+
+  var progress = (completedFields / totalFields) * 100;
+
+  return progress;
+}
+
+function updateProgressBar(progress) {
+  var progressBar = document.getElementById("progressBar");
+  progressBar.style.width = progress + "%";
+  progressBar.setAttribute("aria-valuenow", progress);
+}
+
 function registerUser() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   var confirmPassword = document.getElementById("confirmpassword").value;
+  var birthYear = document.getElementById("birthYear").value;
+  var genderInputs = document.querySelectorAll('input[name="gender"]');
+  var selectedGender = Array.from(genderInputs).find((input) => input.checked);
+  var comments = document.getElementById("comments").value;
+  var progress = calculateProgress();
+
+  // Update the progress bar
+  updateProgressBar(progress);
 
   if (name.trim() === "") {
     showAlert("name is required", "danger");
@@ -74,6 +122,20 @@ function registerUser() {
     );
     return;
   }
+  if (birthYear.trim() === "") {
+    showAlert("Year of birth is required", "danger");
+    return;
+  }
+  if (!selectedGender) {
+    showAlert("Please select a gender", "danger");
+    return;
+  }
+
+  if (comments.trim() === "") {
+    showAlert("Comment is required", "danger");
+    return;
+  }
+
   if (email.trim() === "") {
     showAlert("email is required", "danger");
     return;
@@ -152,4 +214,17 @@ function registerUser() {
   // transaction.onerror = function (event) {
   //   console.log("Transaction error: " + event.target.errorCode);
   // };
+}
+
+function clearForm() {
+  document.getElementById("registerForm").reset();
+}
+
+function navigateToPage() {
+  location.href = "../html/login.html";
+}
+
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-theme");
 }

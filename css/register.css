@@ -157,3 +157,12 @@ body {
     margin-top: 20px;
   }
 }
+
+#progressBarContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#progressBar {
+  background-color: #007bff; /* Adjust the color as needed */
+}
