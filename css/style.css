@@ -404,12 +404,7 @@ body {
   .search-bar{
     margin-top: 20px;
   }
-  
-  .theme-btn{
-    position: absolute;
-    right: 17px;
-    top: 15px;
-  }
+
   
 .search-bar input[type="text"] {
   padding: 2px;
@@ -626,7 +621,11 @@ body {
 .search-bar input{
   display: none;
 }
-.hide-it a{
-  display: none;
-}
+
+  .theme-btn{
+    position: absolute !important;
+    right: 17px !important;
+    top: 15px !important;
+  }
+
 }
