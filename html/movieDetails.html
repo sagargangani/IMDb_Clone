@@ -64,18 +64,17 @@ Student Id : C0892917 -->
               <a class="nav-link" href="celebs.html">Celebrities</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./awards&events.html"
+              <a class="nav-link" href="awards&events.html"
                 >Awards & Events</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">News</a>
+            <li class="nav-item" id="watchlist-menu">
+              <a class="nav-link" href="watchlist.html"
+                >My Watchlist</a
+              >
             </li>
             <li class="nav-item hide-it">
               <a class="nav-link" href="#">Search</a>
-            </li>
-            <li class="nav-item hide-it">
-              <a class="nav-link" href="#">Login</a>
             </li>
           </ul>
         </div>
@@ -86,7 +85,13 @@ Student Id : C0892917 -->
               placeholder="Search movies, TV shows, celebrities..."
             />
             <button class="rounded-2 search">Search</button>
-            <button class="rounded-2" style="margin-right: 50px">Login</button>
+            <button
+              class="rounded-2"
+              onclick="navigateToPage()"
+              id="login-btn"
+            >
+              Login
+            </button>
           </div>
           <div
             style="margin-top: -2.9rem; cursor: pointer; display: inline-block"
@@ -99,6 +104,7 @@ Student Id : C0892917 -->
         </div>
       </nav>
     </header>
+
     <main>
       <div class="movie_container"></div>
     </main>
@@ -123,6 +129,15 @@ Student Id : C0892917 -->
             ><i class="fab fa-youtube"></i
           ></a>
         </div>
+
+         <div class="footer-info">
+          <a
+            href="./contactus.html"
+            style="list-style-type: none; text-decoration: none"
+            ><p style="color: white">Contact us</p></a
+          >
+        </div>
+      </div>
       </div>
     </footer>
     <script
@@ -131,7 +146,7 @@ Student Id : C0892917 -->
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <!-- <script src="../js/index.js"></script> -->
+    <script src="../js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>

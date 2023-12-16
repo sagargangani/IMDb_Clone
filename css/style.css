@@ -80,6 +80,7 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin-left: 20px;
+    margin-right: 30px;
   }
   
   .search-bar input[type="text"] {
